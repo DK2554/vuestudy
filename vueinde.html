@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">{{nextYear('안녕하세요')}}</div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          person: {
+            name: "코지코더",
+            age: 34,
+          },
+        },
+        //메소드안에는 함수가 들어갈 수 있다
+        methods: {
+          nextYear(greeting) {
+            return (
+              greeting +
+              "!" +
+              this.person.name +
+              "는 내년에 " +
+              (this.person.age + 1) +
+              "살입니다"
+            );
+          },
+          other() {
+            this.nextYear();
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
